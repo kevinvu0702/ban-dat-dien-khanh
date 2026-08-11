@@ -142,3 +142,5 @@ footer{padding:38px 0 18px}
 
 .field-error{display:block;min-height:1.25em;margin-top:8px;color:#b42318;font-size:.9rem;font-weight:700;line-height:1.35}
 .form input:invalid:not(:placeholder-shown){border-color:#b42318}
+
+.optional{font-weight:500;font-size:.78em;color:#6f776f;margin-left:.25rem}

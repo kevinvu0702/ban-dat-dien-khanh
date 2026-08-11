@@ -63,3 +63,8 @@ V3 cập nhật:
 - Có section riêng #lo-dat để trình bày thông tin lô đất và giá.
 
 Cập nhật V5: thay khu bản vẽ hiện trạng bằng ảnh trang 2–3 sổ hồng và thống nhất diện tích theo GCN là 173,1 m².
+
+FINAL V4 — FORM FIX
+- Họ và tên: không bắt buộc.
+- Số điện thoại: bắt buộc và kiểm tra đúng số di động Việt Nam 10 số (03/05/07/08/09).
+- Khi số điện thoại sai, form chặn gửi và hiển thị cảnh báo tại đúng ô Số điện thoại.
