@@ -1,0 +1,19 @@
+FINAL QA — BÁN ĐẤT DIÊN KHÁNH
+
+[OK] 1 H1 duy nhất.
+[OK] Title/meta tập trung từ khóa “bán đất Diên Khánh”.
+[OK] Header nhận diện “ĐẤT DIÊN KHÁNH / ĐK”.
+[OK] Địa danh cụ thể vẫn thể hiện Diên Lạc (Diên Hòa cũ), Khánh Hòa.
+[OK] Giá 1,2 tỷ hiển thị nổi bật; 60m² đất ở; diện tích 173,1m².
+[OK] Hero dùng chú thích “Ảnh hiện trạng thực tế”.
+[OK] CTA gọi 0916 85 85 66 và Google Maps đúng tọa độ.
+[OK] Gallery 6 ảnh, đường dẫn local, loading=lazy dưới màn hình đầu.
+[OK] Sổ hồng dùng ảnh local red-book-pages.webp.
+[OK] “Ở / Giữ” được tăng mạnh hierarchy thị giác.
+[OK] Footer đổi “ĐẤT DIÊN KHÁNH”, copyright “© 2026 Bán Đất Diên Khánh”.
+[OK] Responsive CSS cho desktop/tablet/mobile.
+[OK] prefers-reduced-motion được tôn trọng.
+[OK] Form không hiển thị ghi chú demo mặc định trên giao diện.
+[TODO ADMIN] Cập nhật canonical/domain sau khi mua domain.
+[TODO ADMIN] Kết nối form endpoint/Google Sheets.
+[TODO ADMIN] Gắn GA4/GTM/Google Ads conversion sau khi có domain.

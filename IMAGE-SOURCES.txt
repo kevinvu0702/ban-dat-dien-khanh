@@ -1,0 +1,14 @@
+V4 - ẢNH DO CHỦ ĐẤT CUNG CẤP
+
+hero.webp = toàn cảnh lô góc đất Diên Hòa, Khánh Hòa.png
+gallery-01.webp = Lô góc 2 mặt tiền đất Diên Hòa, Khánh Hòa(1).png
+gallery-02.webp = dân cư xung quanh lô góc đất Diên Hòa, Khánh Hòa(1).png
+gallery-03.webp = đường chỉnh từ ngoài vào(1).png
+gallery-04.webp = bên hông chùa yên tĩnh(1).png
+gallery-05.webp = đường bên hông thực tế(1).png
+gallery-06.webp = lối vào từ đường lớn(1).png
+parcel-plan.webp = bản vẽ hiện trạng(1).jpg
+
+Các ảnh hiện trạng đã được người dùng chỉnh màu/ánh sáng. Website không gọi đây là phối cảnh dự án.
+
+- red-book-pages.webp: Ảnh trang 2–3 sổ hồng do chủ đất tải lên trong cuộc trò chuyện; chuyển WebP, tối ưu dung lượng, không dùng nguồn Internet.
