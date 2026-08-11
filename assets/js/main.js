@@ -5,7 +5,7 @@ menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.clas
 const form=document.querySelector('#form'),status=document.querySelector('#form-status');
 const phoneInput=form?.querySelector('input[name="phone"]');
 const phoneError=document.querySelector('#phone-error');
-const CONFIG={endpoint:''};
+const CONFIG={endpoint:'https://script.google.com/macros/s/AKfycbx0TCWFM7TsEIHvU9N0JSWFgHmptdbs8obU3TTLartP1xf_PB9u-tXcg99T8FT_uJROTA/exec'};
 
 function normalizeVietnamPhone(value){
   let digits=(value||'').replace(/\D/g,'');
@@ -42,5 +42,19 @@ form?.addEventListener('submit',async e=>{
   phoneInput.value=normalizeVietnamPhone(phoneInput.value);
   const btn=form.querySelector('button');btn.disabled=true;btn.textContent='Đang kiểm tra…';status.textContent='';
   if(!CONFIG.endpoint){await new Promise(r=>setTimeout(r,500));status.textContent='Hiện tại vui lòng gọi 0916 85 85 66 để nhận vị trí và thông tin lô đất.';btn.disabled=false;btn.textContent='Gửi yêu cầu';return;}
-  try{const res=await fetch(CONFIG.endpoint,{method:'POST',body:new FormData(form)});if(!res.ok)throw new Error();status.textContent='Đã gửi thông tin. Cảm ơn chị/anh!';form.reset()}catch{status.textContent='Chưa gửi được. Vui lòng gọi trực tiếp để được hỗ trợ.'}finally{btn.disabled=false;btn.textContent='Gửi yêu cầu'};
+  try{
+    const payload=new FormData();
+    payload.append('name',form.elements.name?.value.trim()||'');
+    payload.append('phone',normalizeVietnamPhone(phoneInput.value));
+    payload.append('interest',form.elements.need?.value||'Nhận vị trí & thông tin lô đất');
+    payload.append('source','Landing Page Bán Đất Diên Khánh');
+    payload.append('page',window.location.href);
+    await fetch(CONFIG.endpoint,{method:'POST',mode:'no-cors',body:payload});
+    status.textContent='Đã gửi thông tin. Cảm ơn chị/anh!';
+    form.reset();
+  }catch{
+    status.textContent='Chưa gửi được. Vui lòng gọi trực tiếp để được hỗ trợ.';
+  }finally{
+    btn.disabled=false;btn.textContent='Gửi yêu cầu'
+  };
 });
