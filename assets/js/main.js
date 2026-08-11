@@ -5,7 +5,7 @@ menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.clas
 const form=document.querySelector('#form'),status=document.querySelector('#form-status');
 const phoneInput=form?.querySelector('input[name="phone"]');
 const phoneError=document.querySelector('#phone-error');
-const CONFIG={endpoint:'https://script.google.com/macros/s/AKfycbx0TCWFM7TsEIHvU9N0JSWFgHmptdbs8obU3TTLartP1xf_PB9u-tXcg99T8FT_uJROTA/exec'};
+const CONFIG={endpoint:'https://script.google.com/macros/s/AKfycbxFqb7y4AMVOuohj-K9C2Ah9OaiVxrYFpUL3APyF8k1Nhq41kL31exam-ktT_ukIDuj5w/exec'};
 
 function normalizeVietnamPhone(value){
   let digits=(value||'').replace(/\D/g,'');
