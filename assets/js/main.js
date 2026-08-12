@@ -198,23 +198,45 @@ form?.addEventListener('submit', e => {
 
   document.body.appendChild(googleForm);
 
+let submitted = false;
+
+const handleGoogleFormLoad = () => {
+  if (!submitted) return;
+
+  iframe.removeEventListener('load', handleGoogleFormLoad);
+
+  // Chỉ báo thành công sau khi request Google Form đã tải xong vào iframe
+  if (status) {
+    status.textContent = 'Đã gửi thông tin. Cảm ơn chị/anh!';
+  }
+
+  // Chỉ lúc báo thành công mới ghi nhận Google Ads Conversion
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      send_to: 'AW-18290629554/bNPnCNabm-AcELK305FE'
+    });
+  }
+
+  form.reset();
+  googleForm.remove();
+
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = 'Gửi yêu cầu';
+  }
+};
+
+iframe.addEventListener('load', handleGoogleFormLoad);
+
+const startGoogleFormSubmit = () => {
+  submitted = true;
   googleForm.submit();
+};
 
+if (iframe.contentDocument?.readyState === 'complete') {
+  startGoogleFormSubmit();
+} else {
+  iframe.addEventListener('load', startGoogleFormSubmit, { once: true });
+}
 
-  // Sau khi gửi request sang Google Form
-  setTimeout(() => {
-    if (status) {
-      status.textContent =
-        'Đã gửi thông tin. Cảm ơn chị/anh!';
-    }
-
-    form.reset();
-
-    googleForm.remove();
-
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = 'Gửi yêu cầu';
-    }
-  }, 900);
 });
