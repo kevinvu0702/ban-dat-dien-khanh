@@ -122,3 +122,31 @@
 <a class="call-float" href="tel:0916858566" aria-label="Gọi chủ đất">☎ <span>0916 85 85 66</span></a>
 <script src="assets/js/main.js" defer></script>
 </body></html>
+// ========================================
+// GOOGLE ADS - TRACK CLICK GỌI ĐIỆN
+// ========================================
+document.querySelectorAll('a[href="tel:0916858566"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const phoneUrl = this.href;
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        send_to: 'AW-18290629554/XbB3CJnFn-AcELK305FE',
+        value: 1.0,
+        currency: 'VND',
+        event_callback: function () {
+          window.location.href = phoneUrl;
+        }
+      });
+
+      // Dự phòng nếu Google callback chậm/không trả về
+      setTimeout(function () {
+        window.location.href = phoneUrl;
+      }, 800);
+    } else {
+      window.location.href = phoneUrl;
+    }
+  });
+});
