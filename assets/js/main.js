@@ -58,3 +58,26 @@ form?.addEventListener('submit',async e=>{
     btn.disabled=false;btn.textContent='Gửi yêu cầu'
   };
 });
+
+// GOOGLE ADS PHONE CLICK TRACKING START
+document.querySelectorAll('a[href="tel:0916858566"]').forEach(link=>{
+  link.addEventListener('click',function(e){
+    if(typeof gtag!=='function') return;
+    e.preventDefault();
+    const phoneUrl=this.href;
+    let done=false;
+    const go=()=>{
+      if(done) return;
+      done=true;
+      window.location.href=phoneUrl;
+    };
+    gtag('event','conversion',{
+      send_to:'AW-18290629554/XbB3CJnFn-AcELK305FE',
+      value:1.0,
+      currency:'VND',
+      event_callback:go
+    });
+    setTimeout(go,800);
+  });
+});
+// GOOGLE ADS PHONE CLICK TRACKING END
